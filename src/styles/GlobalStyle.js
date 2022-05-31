@@ -3,6 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
 :root{
+    /* font size */
+  --font-size-s: 1rem; /* 16px */
+  --font-size-m : 1.25rem /* 20px */
+  --font-size-l: 1.5rem; /* 24px */ 
+  --font-size-xl: 2rem; /* 32px */
     /* brand-colors */
   --neutral-color-white: #EBEFF2;
   --brand-color-tertiary: #D2D4D9;
