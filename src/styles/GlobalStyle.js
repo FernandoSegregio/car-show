@@ -18,6 +18,13 @@ const GlobalStyle = createGlobalStyle`
   --line-height-default: 100%;
   --line-height-m: 150%;
   --line-height-l: 200%;
+
+    /* font weight */
+  --font-weight-500: 500;
+  --font-weight-600: 600; 
+  --font-weight-bold: bold;
+  --font-weight-normal: normal;
+
     /* brand-colors */
   --neutral-color-white: #EBEFF2;
   --brand-color-tertiary: #D2D4D9;
