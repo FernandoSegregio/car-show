@@ -30,6 +30,13 @@ const GlobalStyle = createGlobalStyle`
   --brand-color-tertiary: #D2D4D9;
   --brand-color-secundary: #AFAFAF;
   --brand-color-primary: #1D2527;
+
+  /* border radius */
+  --border-radius-nano: 0.25rem; /* 4px */
+  --border-radius-s: 0.375rem; /* 6px */
+  --border-radius-m: 1.312rem; /* 21px */
+  --border-radius-l: 1.5rem; /* 24px */
+  --border-radius-circle: 50%;
 }
 
   * {
