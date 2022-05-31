@@ -3,6 +3,10 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
 :root{
+  /* font */
+  --font-family-project: Montserrat, sans-serif, -apple-system;
+  --font-style-title: bebas-kai;  
+
     /* font size */
   --font-size-s: 1rem; /* 16px */
   --font-size-m : 1.25rem /* 20px */
