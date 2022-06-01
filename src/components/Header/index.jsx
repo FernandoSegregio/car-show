@@ -3,6 +3,7 @@ import {
   HeaderContainer,
   NavHeader,
   Hamburguer,
+  CloseNav,
 } from './style';
 
 function Header() {
@@ -17,9 +18,11 @@ function Header() {
       <Hamburguer onClick={() => openMenu()} type="button" hidden={!isOpen}>
         <span className="iconify" data-icon="ci:hamburger" />
       </Hamburguer>
-      <NavHeader hidden={isOpen}>
-        Header
-      </NavHeader>
+      <CloseNav onClick={() => openMenu()} type="button" hidden={isOpen}>
+        <NavHeader hidden={isOpen}>
+          Header
+        </NavHeader>
+      </CloseNav>
     </HeaderContainer>
   );
 }
