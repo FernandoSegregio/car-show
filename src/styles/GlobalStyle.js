@@ -26,7 +26,8 @@ const GlobalStyle = createGlobalStyle`
   --font-weight-normal: normal;
 
     /* brand-colors */
-  --neutral-color-white: #EBEFF2;
+  --neutral-color-white-100: #FFFFFF;
+  --neutral-color-white-200: #EBEFF2;
   --brand-color-tertiary: #D2D4D9;
   --brand-color-secundary: #AFAFAF;
   --brand-color-primary: #1D2527;
