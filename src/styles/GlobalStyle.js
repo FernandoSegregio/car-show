@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* font size */
   --font-size-s: 1rem; /* 16px */
-  --font-size-m : 1.25rem /* 20px */
+  --font-size-m: 1.25rem; /* 20px */
   --font-size-l: 1.5rem; /* 24px */ 
   --font-size-xl: 2rem; /* 32px */
   --font-size-xxl: 3.5rem; /* 56px */
@@ -28,6 +28,8 @@ const GlobalStyle = createGlobalStyle`
     /* brand-colors */
   --neutral-color-white-100: #FFFFFF;
   --neutral-color-white-200: #EBEFF2;
+  --neutral-color-black-100: #282828;
+  --neutral-color-black-200: #242424;
   --brand-color-tertiary: #D2D4D9;
   --brand-color-secundary: #AFAFAF;
   --brand-color-primary: #1D2527;
