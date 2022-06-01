@@ -18,7 +18,7 @@ function Header() {
   return (
     <HeaderContainer>
       <Hamburguer onClick={() => openMenu()} type="button" hidden={!isOpen}>
-        <span className="iconify" data-icon="ci:hamburger" />
+        <span className="iconify" data-icon="cil:hamburger-menu" />
       </Hamburguer>
       <CloseNav onClick={() => openMenu()} type="button" hidden={isOpen}>
         <NavHeader hidden={isOpen}>
