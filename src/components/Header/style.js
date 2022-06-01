@@ -32,4 +32,31 @@ export const NavHeader = styled.nav`
   height: 817px;
   width: 270px;
   z-index: 2;
+  position: relative;
+
+    svg {
+      left: 32.12px;
+      height: 65px;
+      position: absolute;
+      top: 40.13px;
+      width: 65px;
+    }
+`;
+export const UlNav = styled.ul`
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  margin-left: 24px;
+  position: absolute;
+  top: 137px;
+`;
+
+export const Li = styled.li`
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-m);
+  color: var(--brand-color-primary);
+  text-align: left;
+  list-style: none;
+  cursor: pointer;
 `;
