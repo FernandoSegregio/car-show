@@ -2,20 +2,29 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   height: 50px;
+  background-color: transparent;
   width: 100%;
+  position: absolute; 
 `;
+
 export const Hamburguer = styled.button`
-  height: 28.88px;
+  height: 60px;
   width: 32.81px;
   border: none;
   padding: 0;
+  position: absolute;
+  top: 15px;
+  left: 20px; 
   background-color: transparent;
+  z-index: 2;
 
     svg {
-      height: 28.88px;
-      width: 32.81px;
+      color: var(--neutral-color-white-200);
+      height: 47px;
+      width: 47.84px;
     }
 `;
+
 export const CloseNav = styled.button`
   height: 817px;
   width: 100%;
