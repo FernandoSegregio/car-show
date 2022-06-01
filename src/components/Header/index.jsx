@@ -4,6 +4,8 @@ import {
   NavHeader,
   Hamburguer,
   CloseNav,
+  UlNav,
+  Li,
 } from './style';
 
 function Header() {
@@ -20,7 +22,13 @@ function Header() {
       </Hamburguer>
       <CloseNav onClick={() => openMenu()} type="button" hidden={isOpen}>
         <NavHeader hidden={isOpen}>
-          Header
+          <span className="iconify" data-icon="carbon:logo-delicious" />
+          <UlNav>
+            <Li>Home</Li>
+            <Li>Fale Conosco</Li>
+            <Li>Sobre</Li>
+            <Li>Tabela</Li>
+          </UlNav>
         </NavHeader>
       </CloseNav>
     </HeaderContainer>
