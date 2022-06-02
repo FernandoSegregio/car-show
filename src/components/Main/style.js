@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import backgroundMobile from '../../assets/images/backgrounds/background-mobile.jpg';
 import backgroundAbout from '../../assets/images/backgrounds/background-about.jpg';
 import backgroundAboutDesktop
- from '../../assets/images/backgrounds/background-about-desktop.jpg';
+  from '../../assets/images/backgrounds/background-about-desktop.jpg';
 
 export const MainContainer = styled.main`
   background-color: var(--neutral-color-white-200);
@@ -50,7 +50,9 @@ export const SectionAbout = styled.section`
 
     @media screen and (min-width: 900px) {
       background-image: url(${backgroundAboutDesktop});
+      display: flex;
       height: 543px;
+      justify-content: flex-end;
     }
 
     div {
@@ -74,6 +76,13 @@ export const SectionAbout = styled.section`
       font-weight: var(--font-weight-normal);
       line-height: var(--line-height-m);
       text-align: right;
+
+        @media screen and (min-width: 900px) {
+          font-weight: var(--font-weight-normal);
+          font-size: var(--font-size-xxl);
+          line-height: var(--line-height-m);
+          text-align: right;
+        }
     }
 
     p {
@@ -82,6 +91,13 @@ export const SectionAbout = styled.section`
       font-weight: var(--font-weight-300);
       line-height: var(--line-height-l);
       text-align: right;
+
+      @media screen and (min-width: 900px) {
+          font-weight: var(--font-weight-300);
+          font-size: var(--font-size-m);
+          line-height: var(--line-height-l);
+          text-align: right;
+        }
     }
 `;
 
@@ -97,6 +113,13 @@ export const ButtonAbout = styled.button`
   margin-right: 11px;  
   text-align: center;
   width: 193px;
+
+  @media screen and (min-width: 900px) {
+    width: 273px;
+    height: 56px;
+    margin-top: 15px;
+    padding: 8px 0px;
+  }
 `;
 
 export const ArticleAbout = styled.article`
@@ -107,4 +130,10 @@ export const ArticleAbout = styled.article`
   position: relative;
   row-gap: 15px;
   top: 40px;
+
+  @media screen and (min-width: 900px) {
+    width: 616px;
+    height: 201px;
+    margin: 0 157px 0 0;
+  }
 `;
