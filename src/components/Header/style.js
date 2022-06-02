@@ -30,8 +30,9 @@ export const CloseNav = styled.button`
   width: 100%;
   border: none;
   padding: 0;
+  position: absolute;
   background-color: transparent;
-  z-index: 1;
+  z-index: 3;
 `;
 
 export const NavHeader = styled.nav`
@@ -39,9 +40,9 @@ export const NavHeader = styled.nav`
   border-radius: 0px 24px 24px 0px;
   box-shadow: 3px 0px 9px rgba(0, 0, 0, 0.15);
   height: 817px;
+  position: absolute;
   width: 270px;
-  z-index: 2;
-  position: relative;
+  z-index: 4;
 
     svg {
       left: 32.12px;
@@ -49,6 +50,10 @@ export const NavHeader = styled.nav`
       position: absolute;
       top: 40.13px;
       width: 65px;
+    }
+
+    a {
+      text-decoration: none;
     }
 `;
 export const UlNav = styled.ul`
