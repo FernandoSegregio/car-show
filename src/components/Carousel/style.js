@@ -26,11 +26,26 @@ export const CarouselContainer = styled(Swiper)`
       width: 278px !important;
     }
 
-    .swiper-slide img {
+    .swiper-slide .car1 {
       left: 8%;
       position: absolute;
       top: -114px;
       width: 226px;
+    }
+
+    .car2 {
+      left: 9%;
+      position: absolute;
+      top: -80px;
+      width: 228.98px;
+    }
+
+    .car3 {
+      height: 272.3;
+      left: -15%;
+      position: absolute;
+      top: -229px;
+      width: 394px;
     }
 
     .swiper-button-next,
