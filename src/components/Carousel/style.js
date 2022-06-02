@@ -3,21 +3,28 @@ import styled from 'styled-components';
 import { Swiper } from 'swiper/react';
 import { ButtonAbout } from '../Main/style';
 
+export const CarouselSection = styled.section`
+  background-color: var(--neutral-color-white-300);
+  width: 100%;
+`;
+
 export const CarouselContainer = styled(Swiper)`
   align-items: center;
-  background-color: var(--neutral-color-white-300);
   display: flex;
   height: 560px;
   justify-content: center;
   padding: 40px 24px;
 
+
     @media screen and (min-width: 900px) {
       height: 600px;
-      padding: 90px 24px 40px;
+      padding: 90px 0 40px;
     }  
 
     .swiper-wrapper {
       align-items: flex-end;
+      width: 76%;
+      margin: 0 50px;
 
       @media screen and (min-width: 900px) {
         align-items: center;
@@ -71,6 +78,19 @@ export const CarouselContainer = styled(Swiper)`
         }
       }    
     }
+
+    .swiper-button-next {
+      @media screen and (min-width: 900px) {
+        right: 59.25px; 
+      }
+    }
+
+    .swiper-button-prev {
+      @media screen and (min-width: 900px) {
+        left: 59.25px; 
+      }
+    }
+
 
     .swiper-pagination {
       @media screen and (min-width: 900px) {
