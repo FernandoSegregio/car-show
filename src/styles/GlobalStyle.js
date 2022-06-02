@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
   --line-height-l: 200%;
 
     /* font weight */
+  --font-weight-300: 300;
   --font-weight-500: 500;
   --font-weight-600: 600; 
   --font-weight-bold: bold;
@@ -28,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     /* brand-colors */
   --neutral-color-white-100: #FFFFFF;
   --neutral-color-white-200: #EBEFF2;
+  --neutral-color-white-300: #EBEBEB;
   --neutral-color-black-100: #282828;
   --neutral-color-black-200: #242424;
   --brand-color-tertiary: #D2D4D9;
