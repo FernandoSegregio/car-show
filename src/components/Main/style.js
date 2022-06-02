@@ -6,14 +6,14 @@ export const MainContainer = styled.main`
   background-color: var(--neutral-color-white-200);
   height: 817px;
   width: 100%;
+`;
 
-    div {
-      align-items: center;
-      background-color: var(--neutral-color-white-300);
-      display: flex;
-      height: 530px;
-      justify-content: center;
-    }
+export const CarouselContainer = styled.section`
+  align-items: center;
+  background-color: var(--neutral-color-white-300);
+  display: flex;
+  height: 530px;
+  justify-content: center;
 `;
 
 export const SectionMain = styled.section`
@@ -102,4 +102,77 @@ export const ArticleAbout = styled.article`
   position: relative;
   row-gap: 15px;
   top: 40px;
+`;
+
+export const DivCarousel = styled.div`
+  border-radius: 24px;
+  border: 1px solid var(--brand-color-primary);
+  display: flex;
+  flex-direction: column;
+  height: 362px;
+  margin-top: 95px;
+  position: relative;
+  width: 281px;
+  
+    img {
+      left: 8%;
+      position: absolute;
+      top: -114px;
+      width: 226px;
+    }
+
+    h2 {
+      margin: 26.4px auto;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin-left: 32px;
+      row-gap: 24px;
+
+        li {
+          align-items: center;
+          column-gap: 26.4px;
+          display: flex;
+          flex-direction: row;
+            
+            span {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 150%;
+            }
+            
+            .date {
+              height: 24px;
+              width: 24px;
+            }
+
+            .velo {
+              height: 28.84px;
+              width: 24px;
+            }
+
+            .energy {
+              height: 23.97px;
+              width: 23.97px;
+            }
+
+            .people {
+              height: 27.2px;
+              width: 26.2px;
+            }
+        }
+
+    }
+
+`;
+
+export const ButtonCarousel = styled(ButtonAbout)`
+  border-color: var(--brand-color-primary);
+  border-radius: 21px;
+  color: var(--brand-color-primary);
+  height: 48px;
+  margin: auto;
+  width: 217px;
 `;
