@@ -11,8 +11,17 @@ export const CarouselContainer = styled(Swiper)`
   justify-content: center;
   padding: 40px 24px;
 
+    @media screen and (min-width: 900px) {
+      height: 600px;
+      padding: 90px 24px 40px;
+    }  
+
     .swiper-wrapper {
       align-items: flex-end;
+
+      @media screen and (min-width: 900px) {
+        align-items: center;
+      }  
     }
     
     .swiper-slide {
@@ -51,6 +60,30 @@ export const CarouselContainer = styled(Swiper)`
     .swiper-button-prev,
     .swiper-pagination {
       display: none;
+
+      @media screen and (min-width: 900px) {
+        display: initial;
+        
+
+        &::after {
+          color: var(--brand-color-primary);
+          font-size: 32.5px;
+        }
+      }    
+    }
+
+    .swiper-pagination {
+      @media screen and (min-width: 900px) {
+        height: 4px;
+        width: 273px;
+        bottom: 40px;
+        top: revert;
+        left: calc(50% - 136.5px);
+        
+          span {
+            background-color: var(--brand-color-primary);
+          }      
+      }    
     }
 
     h2 {
