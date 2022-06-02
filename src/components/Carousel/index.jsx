@@ -11,31 +11,31 @@ import { Pagination, Navigation } from 'swiper';
 import {
   ButtonCarousel,
   CarouselContainer,
+  CarouselSection,
 } from './style';
 import data from '../../helper/database';
 
 function Carousel() {
   return (
-    <CarouselContainer
-      spaceBetween={24}
-      pagination={{
-        clickable: true,
-        type: 'progressbar',
-      }}
-      navigation
-      modules={[Pagination, Navigation]}
-      className="mySwiper"
-      breakpoints={{
-        799: {
-          slidesPerView: 'auto',
-        },
-        800: {
-          slidesPerView: 3,
-          spaceBetween: 101,
-        },
-      }}
-    >
-      {
+    <CarouselSection>
+      <CarouselContainer
+        spaceBetween={24}
+        slidesPerView={1}
+        pagination={{
+          clickable: true,
+          type: 'progressbar',
+        }}
+        navigation
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+        breakpoints={{
+          800: {
+            slidesPerView: 3,
+            spaceBetween: 101,
+          },
+        }}
+      >
+        {
       data.map(({
         id, image, alt, name, year, speed, energyRating, userRating, model,
       }) => (
@@ -64,7 +64,8 @@ function Carousel() {
         </SwiperSlide>
       ))
       }
-    </CarouselContainer>
+      </CarouselContainer>
+    </CarouselSection>
   );
 }
 
