@@ -10,12 +10,12 @@ import {
 
 function Main() {
   return (
-    <MainContainer>
+    <MainContainer id="home">
       <SectionMain>
         <h1>MUSTANG</h1>
       </SectionMain>
       <Carousel />
-      <SectionAbout>
+      <SectionAbout id="about">
         <div />
         <ArticleAbout>
           <h1>O que são</h1>
