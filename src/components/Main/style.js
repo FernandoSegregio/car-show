@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import backgroundMobile from '../../assets/images/background-mobile.jpg';
-import backgroundAbout from '../../assets/images/background-about.jpg';
+import backgroundMobile from '../../assets/images/backgrounds/background-mobile.jpg';
+import backgroundAbout from '../../assets/images/backgrounds/background-about.jpg';
 
 export const MainContainer = styled.main`
   background-color: var(--neutral-color-white-200);
