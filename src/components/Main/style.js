@@ -15,7 +15,7 @@ export const SectionMain = styled.section`
   background-position-y: 50%;
   background-repeat: no-repeat;
   background-size: 100%;
-  clip-path: ellipse(426px 208px at 50% 20%);
+  clip-path: ellipse(427px 148px at 50% 43%);
   height: 260px;
   position: relative;
   width: 100%;
