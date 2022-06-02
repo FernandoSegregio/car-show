@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import backgroundMobile from '../../assets/images/backgrounds/background-mobile.jpg';
 import backgroundAbout from '../../assets/images/backgrounds/background-about.jpg';
+import backgroundAboutDesktop
+ from '../../assets/images/backgrounds/background-about-desktop.jpg';
 
 export const MainContainer = styled.main`
   background-color: var(--neutral-color-white-200);
@@ -46,12 +48,24 @@ export const SectionAbout = styled.section`
   width: 100%;
   z-index: 0;
 
+    @media screen and (min-width: 900px) {
+      background-image: url(${backgroundAboutDesktop});
+      height: 543px;
+    }
+
     div {
       backdrop-filter: blur(1.6679px);
       background: linear-gradient(180deg, rgba(29, 37, 39, 0.6) 15.42%, rgba(29, 37, 39, 0.552) 35.73%, rgba(29, 37, 39, 0.156) 78.67%, rgba(29, 37, 39, 0) 100%);
       height: 359px;
       position: absolute;
       width: 100%;
+        
+        @media screen and (min-width: 900px) {
+          background: linear-gradient(270deg, rgba(29, 37, 39, 0.6) 15.42%, rgba(29, 37, 39, 0.552) 35.73%, rgba(29, 37, 39, 0.156) 78.67%, rgba(29, 37, 39, 0) 100%);
+          height: 543px;
+          right: 0;
+          width: 773px;
+      }
     }
 
     h1 {
