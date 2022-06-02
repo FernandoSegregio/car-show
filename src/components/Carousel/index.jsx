@@ -17,9 +17,7 @@ import data from '../../helper/database';
 function Carousel() {
   return (
     <CarouselContainer
-      slidesPerView="auto"
       spaceBetween={24}
-      slidesPerGroup={1}
       pagination={{
         clickable: true,
         type: 'progressbar',
@@ -27,6 +25,15 @@ function Carousel() {
       navigation
       modules={[Pagination, Navigation]}
       className="mySwiper"
+      breakpoints={{
+        799: {
+          slidesPerView: 'auto',
+        },
+        800: {
+          slidesPerView: 3,
+          spaceBetween: 101,
+        },
+      }}
     >
       {
       data.map(({
