@@ -22,6 +22,7 @@ function Carousel() {
       slidesPerGroup={1}
       pagination={{
         clickable: true,
+        type: 'progressbar',
       }}
       navigation
       modules={[Pagination, Navigation]}
