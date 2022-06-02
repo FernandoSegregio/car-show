@@ -9,7 +9,7 @@ export const CarouselContainer = styled(Swiper)`
   display: flex;
   height: 560px;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px 24px;
 
     .swiper-wrapper {
       align-items: flex-end;
@@ -21,7 +21,6 @@ export const CarouselContainer = styled(Swiper)`
       display: flex;
       flex-direction: column;
       height: 362px;
-      margin-left: 24px;
       position: relative;
       width: 278px !important;
     }

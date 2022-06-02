@@ -17,11 +17,9 @@ import data from '../../helper/database';
 function Carousel() {
   return (
     <CarouselContainer
-      slidesPerView={1}
-      // spaceBetween={24}
+      slidesPerView="auto"
+      spaceBetween={24}
       slidesPerGroup={1}
-      // loop
-      // loopFillGroupWithBlank
       pagination={{
         clickable: true,
       }}
