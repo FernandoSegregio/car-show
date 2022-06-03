@@ -13,7 +13,7 @@ export const MainContainer = styled.main`
 `;
 
 export const SectionMain = styled.section`
-  background-color: var(--neutral-color-white-300);
+  background-color: var(--neutral-color-white-200);
   background-image: url(${backgroundMobile});
   background-position-x: 50%;
   background-position-y: 50%;
