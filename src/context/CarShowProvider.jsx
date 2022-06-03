@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import CarShowContext from './CarShowContext';
 
-function PokedexProvider({ children }) {
-  const context = { };
+function CarShowProvider({ children }) {
+  const [theme, setTheme] = useState('dark');
+
+  const context = useMemo(() => ({
+    theme, setTheme,
+  }), [theme]);
 
   return (
     <CarShowContext.Provider value={context}>
@@ -11,8 +15,8 @@ function PokedexProvider({ children }) {
     </CarShowContext.Provider>
   );
 }
-PokedexProvider.propTypes = {
+CarShowProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default PokedexProvider;
+export default CarShowProvider;
