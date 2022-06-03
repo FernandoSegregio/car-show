@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  height: 50px;
-  background-color: transparent;
+  height: 96px;
   width: 100%;
   display: flex;
   position: absolute;
+  background-color: ${(props) => props.theme.background};
+
 
   & > svg {
       z-index: 2;
