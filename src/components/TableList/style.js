@@ -4,8 +4,18 @@ export const ListContainer = styled.section`
   background-color: var(--neutral-color-white-200);
   width: 100%;
   height: 1116px;
+
+    .is-hidden {
+      display: none;
+    }
+    .no-hidden {
+      display: flex;
+      position: absolute;
+      left: 308px;
+      top: 136px;
+    }
     
-    div {
+    article {
       align-items: center;
       display: flex;
       justify-content: space-between;
@@ -73,6 +83,7 @@ export const ButtonAdd = styled.button`
   border: 0.627523px solid var(--brand-color-primary);
   color: var(--brand-color-primary);
   column-gap: 14px;
+  cursor: pointer;
   display: flex;
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-500);
@@ -86,4 +97,71 @@ export const ButtonAdd = styled.button`
       height: 25px;
       width: 25px;
     }
+`;
+
+export const FormContainer = styled.section`
+  background-color: var(--neutral-color-white-200);
+  width: 684px;
+  height: 723px;
+  background: #EBEFF2;
+  box-shadow: 0px 6px 24px 3px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius-l);
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  position: relative;
+
+  & > button:first-child {
+      position: absolute;
+      top: 41.52px;
+      right: 41.5px;
+      border: none;
+      background: transparent;
+    }
+
+    div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 40px;
+
+       img {
+        width: 225px;
+        height: 225px; 
+       } 
+    }
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  row-gap: 16px;
+
+    label {
+      color: #808080;
+      font-weight: var(--font-weight-normal);
+      font-size: var(--font-size-s);
+      line-height: var(--line-height-m);
+    }
+   
+
+    input {
+      height: 40px;
+      width: 323px;
+      border: 1px solid var(--brand-color-secundary);
+      border-radius: var(--border-radius-s);
+
+        &:active {
+          border: 1px solid var(--brand-color-primary);
+        }
+    }
+`;
+
+export const FormButton = styled(ButtonAdd)`
+  background-color: var(--brand-color-primary);
+  color: var(--neutral-color-white-200);
+  align-self: flex-end;
+  cursor: pointer;
+  margin-top: 20px;
 `;
