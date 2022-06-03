@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   HeaderContainer,
   NavHeader,
@@ -12,13 +13,15 @@ function NavDesktop() {
       <span className="iconify" data-icon="carbon:logo-delicious" />
       <NavHeader>
         <UlNav>
-          <a href="#home">
+          <Link to="/">
             <Li>Home</Li>
-          </a>
-          <a href="#about">
+          </Link>
+          <a href="/#about">
             <Li>Sobre</Li>
           </a>
-          <Li>Tabela</Li>
+          <Link to="/table">
+            <Li>Tabela</Li>
+          </Link>
           <Li>Fale Conosco</Li>
           <Li>
             Entrar
