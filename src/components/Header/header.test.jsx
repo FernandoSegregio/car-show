@@ -14,7 +14,13 @@ describe('Testing component Header', () => {
   it('should be able to show a "ul" element.', () => {
     renderWithRouter(<Header />);
 
-    const ulElament = screen.getByRole('list');
-    expect(ulElament).toBeInTheDocument();
+    const ulElement = screen.getByRole('list');
+    expect(ulElement).toBeInTheDocument();
+  });
+  it('should be able to show a "li" element.', () => {
+    renderWithRouter(<Header />);
+
+    const liElement = screen.getAllByRole('listitem');
+    expect(liElement[0]).toBeInTheDocument();
   });
 });
