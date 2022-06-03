@@ -135,7 +135,7 @@ export const FormContainer = styled.section`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 54%;
   row-gap: 16px;
 
     label {
