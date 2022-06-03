@@ -49,6 +49,9 @@ $ docker run -p 3000:3000 front
 
 A aplicação é roda no navegador, na porta 3000 com o seguinte endereço: http://localhost:3000
 
+## :rocket:Aplicação Hospedada:
+https://car-show-fernandosegregio.vercel.app
+
 ## 👨🏻‍💻Desenvolvido por:
 
 Fernando Segregio
