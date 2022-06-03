@@ -15,4 +15,12 @@ describe('Testing component Main', () => {
     expect(h1Element[1]).toBeInTheDocument();
     expect(h1Element).toHaveLength(2);
   });
+  it('should be able to show a button text "Ver carros".', () => {
+    renderWithRouter(<Main />);
+
+    const buttonShowCars = screen.getByRole('button', {
+      name: 'Ver carros',
+    });
+    expect(buttonShowCars).toBeInTheDocument();
+  });
 });
