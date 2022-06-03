@@ -11,4 +11,10 @@ describe('Testing component Header', () => {
     const navElement = screen.getByRole('navigation');
     expect(navElement).toBeInTheDocument();
   });
+  it('should be able to show a "ul" element.', () => {
+    renderWithRouter(<Header />);
+
+    const ulElament = screen.getByRole('list');
+    expect(ulElament).toBeInTheDocument();
+  });
 });
