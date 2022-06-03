@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -13,14 +12,12 @@ import CarShowContext from './context/CarShowContext';
 function App() {
   const { theme } = useContext(CarShowContext);
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme === 'dark' ? dark : light}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/table" element={<Table />} />
-        </Routes>
-      </ThemeProvider>
-    </BrowserRouter>
+    <ThemeProvider theme={theme === 'dark' ? dark : light}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/table" element={<Table />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
