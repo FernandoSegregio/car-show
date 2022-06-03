@@ -3,6 +3,8 @@ import backgroundMobile from '../../assets/images/backgrounds/background-mobile.
 import backgroundAbout from '../../assets/images/backgrounds/background-about.jpg';
 import backgroundAboutDesktop
   from '../../assets/images/backgrounds/background-about-desktop.jpg';
+import back
+  from '../../assets/images/backgrounds/background-main-desktop.jpg';
 
 export const MainContainer = styled.main`
   background-color: var(--neutral-color-white-200);
@@ -23,6 +25,12 @@ export const SectionMain = styled.section`
   width: 100%;
   z-index: 0;
 
+    @media screen and (min-width: 900px) {
+      background-image: url(${back});
+      clip-path: ellipse(1500px 370px at 50% 47%);
+      height: 700px;
+    }
+
     h1 {
       color: var(--neutral-color-white-300);
       font-family: bebas-kai;   
@@ -34,6 +42,15 @@ export const SectionMain = styled.section`
       position: absolute;
       text-align: center;
       top: 45px;
+
+        @media screen and (min-width: 900px) {
+          font-weight: 400;
+          font-size: 203.959px;
+          line-height: 150%;
+          left: 23%;
+          letter-spacing: 0.12em;
+          top: 70px;
+        }
     }
 `;
 
@@ -50,6 +67,8 @@ export const SectionAbout = styled.section`
 
     @media screen and (min-width: 900px) {
       background-image: url(${backgroundAboutDesktop});
+      background-position-x: initial;
+      background-position-y: initial;
       display: flex;
       height: 543px;
       justify-content: flex-end;
