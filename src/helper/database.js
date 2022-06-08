@@ -1,10 +1,11 @@
+import { v4 as uuidv4 } from 'uuid';
 import car1 from '../assets/images/cars/car1.svg';
 import car2 from '../assets/images/cars/car2.svg';
 import car3 from '../assets/images/cars/car3.svg';
 
 const data = [
   {
-    id: 1,
+    id: uuidv4(),
     image: car1,
     alt: 'car mustang',
     name: 'Mustang',
@@ -15,7 +16,7 @@ const data = [
     model: 'car1',
   },
   {
-    id: 2,
+    id: uuidv4(),
     image: car2,
     alt: 'car mustang',
     name: 'Mustang',
@@ -26,7 +27,7 @@ const data = [
     model: 'car2',
   },
   {
-    id: 3,
+    id: uuidv4(),
     image: car3,
     alt: 'car mustang',
     name: 'Mustang',
@@ -37,7 +38,7 @@ const data = [
     model: 'car3',
   },
   {
-    id: 4,
+    id: uuidv4(),
     image: car1,
     alt: 'car mustang',
     name: 'Mustang',
@@ -48,7 +49,7 @@ const data = [
     model: 'car1',
   },
   {
-    id: 5,
+    id: uuidv4(),
     image: car2,
     alt: 'car mustang',
     name: 'Mustang',
@@ -59,7 +60,7 @@ const data = [
     model: 'car2',
   },
   {
-    id: 6,
+    id: uuidv4(),
     image: car3,
     alt: 'car mustang',
     name: 'Mustang',
