@@ -12,45 +12,30 @@ function TableList() {
 
   const [isHidden, setIsHidden] = useState('is-hidden');
   const { setTheme } = useContext(CarShowContext);
-  const [nameCar, setNameCar] = useState('');
-  const [yearCar, setYearCar] = useState('');
-  const [speedCar, setSpeedCar] = useState('');
-  const [energyCar, setEnergyCar] = useState('');
-  const [userRatingCar, setUserRatingCar] = useState('');
-  const [modelCar, setModelCar] = useState('');
-  const [linkCar, setLinkCar] = useState('');
+  const initialState = {
+    name: '',
+    year: '',
+    speed: '',
+    energyRating: '',
+    userRating: '',
+    model: '',
+    image: '',
+  };
+  const [newCar, setNewCar] = useState(initialState);
 
-  const newData = {
-    id: data[data.length - 1].id + 1,
-    alt: nameCar,
-    name: nameCar,
-    year: yearCar,
-    speed: speedCar,
-    energyRating: energyCar,
-    userRating: userRatingCar,
-    model: modelCar,
-    image: linkCar,
+  const handleChange = ({ target: { name, value } }) => {
+    setNewCar((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
-  const nameAndYear = newData.name.length >= 2 && newData.year.length === 4;
-  const speedAndEnergy = newData.speed.length >= 2 && newData.energyRating.length >= 1;
-  const userRatingAndModelImage = newData.userRating.length >= 1 && newData
-    .model.length >= 2 && newData.image.length >= 2;
+  const isDisable = Object.values(newCar).some((item) => !item);
 
-  const desability = (nameAndYear && speedAndEnergy && userRatingAndModelImage);
-
-  function addNewCar() {
-    data.push(newData);
-  }
-
-  function resetInputs() {
-    setNameCar('');
-    setYearCar('');
-    setSpeedCar('');
-    setEnergyCar('');
-    setUserRatingCar('');
-    setModelCar('');
-    setLinkCar('');
+  function addNewCar(e) {
+    e.preventDefault();
+    data.push(newCar);
+    setNewCar(initialState);
   }
 
   useEffect(() => {
@@ -68,43 +53,44 @@ function TableList() {
         <h2>Adicionar novo</h2>
         <div>
           <img src={retangle} alt="bandeira" />
-          <Form onSubmit={(e) => {
-            e.preventDefault();
-            addNewCar();
-          }}
-          >
+          <Form onSubmit={(e) => { addNewCar(e); }}>
             <label htmlFor="name">
               Nome
-              <input onChange={({ target: { value } }) => setNameCar(value)} id="name" type="text" name="name" value={nameCar} />
+              <input onChange={handleChange} id="name" type="text" name="name" value={newCar.name} />
             </label>
             <label htmlFor="model">
               Modelo
-              <input onChange={({ target: { value } }) => setModelCar(value)} id="model" type="text" name="model" value={modelCar} />
+              <input onChange={handleChange} id="model" type="text" name="model" value={newCar.model} />
             </label>
             <label htmlFor="name">
               Ano
-              <input onChange={({ target: { value } }) => setYearCar(value)} id="year" type="text" name="year" value={yearCar} />
+              <input onChange={handleChange} id="year" type="text" name="year" value={newCar.year} />
             </label>
             <label htmlFor="speed">
               Velocidade Máxima Km/h
-              <input onChange={({ target: { value } }) => setSpeedCar(value)} id="speed" type="text" name="speed" value={speedCar} />
+              <input onChange={handleChange} id="speed" type="text" name="speed" value={newCar.speed} />
             </label>
             <label htmlFor="energyRating">
               Nota economia
-              <input onChange={({ target: { value } }) => setEnergyCar(value)} id="energyRating" type="text" name="energyRating" value={energyCar} />
+              <input onChange={handleChange} id="energyRating" type="text" name="energyRating" value={newCar.energyRating} />
             </label>
             <label htmlFor="userRating">
               Nota usúarios
-              <input onChange={({ target: { value } }) => setUserRatingCar(value)} id="userRating" type="text" name="userRating" value={userRatingCar} />
+              <input onChange={handleChange} id="userRating" type="text" name="userRating" value={newCar.userRating} />
             </label>
             <label htmlFor="link">
               Link produtos
-              <input onChange={({ target: { value } }) => setLinkCar(value)} id="link" type="text" name="link" value={linkCar} />
+              <input
+                onChange={handleChange}
+                id="link"
+                type="text"
+                name="image"
+                value={newCar.image}
+              />
             </label>
             <FormButton
-              disabled={!desability}
+              disabled={isDisable}
               type="submit"
-              onClick={() => resetInputs()}
             >
               <span className="iconify" data-icon="carbon:add" />
               Adicionar Novo
