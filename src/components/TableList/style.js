@@ -68,6 +68,12 @@ export const ListContainer = styled.section`
     td {
       text-align: center;
       height: 64px;
+
+        button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+        }
     }
     
     td:nth-of-type(6) {
@@ -157,6 +163,7 @@ export const Form = styled.form`
       width: 323px;
       border: 1px solid var(--brand-color-secundary);
       border-radius: var(--border-radius-s);
+      padding: 10px;
 
         &:active {
           border: 1px solid var(--brand-color-primary);
