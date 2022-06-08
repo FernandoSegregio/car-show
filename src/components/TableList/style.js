@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const ListContainer = styled.section`
   background-color: var(--neutral-color-white-200);
   width: 100%;
-  height: 1116px;
+  min-height: 1116px;
+  padding-bottom: 100px;
 
     .is-hidden {
       display: none;
