@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useLocation } from 'react-router-dom';
 import {
   ListContainer, ButtonAdd, Form, FormContainer, FormButton,
@@ -13,6 +14,7 @@ function TableList() {
   const [isHidden, setIsHidden] = useState('is-hidden');
   const { setTheme } = useContext(CarShowContext);
   const initialState = {
+    id: '',
     name: '',
     year: '',
     speed: '',
@@ -22,10 +24,12 @@ function TableList() {
     image: '',
   };
   const [newCar, setNewCar] = useState(initialState);
+  const [renderTable, setRenderTable] = useState(data);
 
   const handleChange = ({ target: { name, value } }) => {
     setNewCar((prevState) => ({
       ...prevState,
+      id: uuidv4(),
       [name]: value,
     }));
   };
@@ -34,8 +38,13 @@ function TableList() {
 
   function addNewCar(e) {
     e.preventDefault();
-    data.push(newCar);
+    setRenderTable([...renderTable, newCar]);
     setNewCar(initialState);
+  }
+
+  function deleteCar(id) {
+    const dataUpdated = renderTable.filter((elem) => elem.id !== id);
+    setRenderTable(dataUpdated);
   }
 
   useEffect(() => {
@@ -43,6 +52,10 @@ function TableList() {
       setTheme('dark');
     }
   }, [location.pathname]);
+
+  useEffect(() => {
+    console.log(data);
+  }, []);
 
   return (
     <ListContainer>
@@ -123,7 +136,7 @@ function TableList() {
           </tr>
         </thead>
         <tbody>
-          { data.length > 0 && data.map(({
+          { renderTable.length > 0 && renderTable.map(({
             name, year, speed, energyRating, userRating, id,
           }) => (
             <tr key={id}>
@@ -132,7 +145,7 @@ function TableList() {
               <td>{speed}</td>
               <td>{energyRating}</td>
               <td>{userRating}</td>
-              <td><span className="iconify" data-icon="akar-icons:trash-can" /></td>
+              <td><button type="button" onClick={() => deleteCar(id)}><span className="iconify" data-icon="akar-icons:trash-can" /></button></td>
               <td><span className="iconify" data-icon="clarity:edit-line" /></td>
             </tr>
           ))}
