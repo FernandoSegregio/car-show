@@ -14,7 +14,11 @@ export const ListContainer = styled.section`
       left: 308px;
       top: 136px;
     }
-    
+
+    h2 {
+      margin-top: 12px;
+    }
+
     article {
       align-items: center;
       display: flex;
@@ -107,7 +111,7 @@ export const FormContainer = styled.section`
   box-shadow: 0px 6px 24px 3px rgba(0, 0, 0, 0.25);
   border-radius: var(--border-radius-l);
   display: flex;
-  padding: 40px;
+  padding: 25px;
   flex-direction: column;
   position: relative;
 
@@ -123,9 +127,10 @@ export const FormContainer = styled.section`
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-top: 40px;
+      margin-top: 24px;
 
        img {
+        margin-top: 8px;
         width: 225px;
         height: 225px; 
        } 
@@ -161,7 +166,11 @@ export const Form = styled.form`
 export const FormButton = styled(ButtonAdd)`
   background-color: var(--brand-color-primary);
   color: var(--neutral-color-white-200);
-  align-self: flex-end;
+  margin-left: 12px;
   cursor: pointer;
-  margin-top: 20px;
+    
+    &:disabled {
+      background-color: var(--brand-color-secundary);
+      border: 0.627523px solid var(--brand-color-secundary);
+    }
 `;
