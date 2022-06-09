@@ -189,7 +189,7 @@ function TableList() {
               type="submit"
             >
               <span className="iconify" data-icon="carbon:add" />
-              Adicionar Novo
+              Salvar
             </FormButton>
           </Form>
         </div>
