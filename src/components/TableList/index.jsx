@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useLocation } from 'react-router-dom';
 import {
-  ListContainer, ButtonAdd, Form, FormContainer, FormButton,
+  ListContainer, ButtonAdd, Form, FormContainer, FormButton, TableContainer,
 } from './style';
 import data from '../../helper/database';
 import CarShowContext from '../../context/CarShowContext';
@@ -12,6 +12,7 @@ function TableList() {
   const location = useLocation();
 
   const [isHidden, setIsHidden] = useState('is-hidden');
+  const [isEdit, setIsEdit] = useState('is-hidden');
   const { setTheme } = useContext(CarShowContext);
   const initialState = {
     id: '',
@@ -25,6 +26,8 @@ function TableList() {
   };
   const [newCar, setNewCar] = useState(initialState);
   const [renderTable, setRenderTable] = useState(data);
+  const [carUpdated, setCarUpdated] = useState({});
+  const [index, setIndex] = useState();
 
   const handleChange = ({ target: { name, value } }) => {
     setNewCar((prevState) => ({
@@ -34,7 +37,15 @@ function TableList() {
     }));
   };
 
+  const handleChangeEdit = ({ target: { name, value } }) => {
+    setCarUpdated((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   const isDisable = Object.values(newCar).some((item) => !item);
+  const isDisableEdit = Object.values(carUpdated).some((item) => !item);
 
   function addNewCar(e) {
     e.preventDefault();
@@ -47,6 +58,21 @@ function TableList() {
     setRenderTable(dataUpdated);
   }
 
+  function editCar(id) {
+    setIsEdit('no-hidden');
+    const dataUpdated = renderTable.find((elem) => elem.id === id);
+    setCarUpdated(dataUpdated);
+    const indexEdit = renderTable.indexOf(dataUpdated);
+    setIndex(indexEdit);
+  }
+
+  function changeCarEdit(e) {
+    e.preventDefault();
+    renderTable[index] = carUpdated;
+    setRenderTable(renderTable);
+    setCarUpdated(initialState);
+  }
+
   useEffect(() => {
     if (location.pathname.includes('table')) {
       setTheme('dark');
@@ -54,7 +80,7 @@ function TableList() {
   }, [location.pathname]);
 
   useEffect(() => {
-    console.log(data);
+    console.log(renderTable);
   }, []);
 
   return (
@@ -111,6 +137,60 @@ function TableList() {
           </Form>
         </div>
       </FormContainer>
+      { Object.values(carUpdated).length > 0 && (
+      <FormContainer className={isEdit}>
+        <button type="button" onClick={() => setIsEdit('is-hidden')}>
+          <span className="iconify" data-icon="ant-design:close-circle-outlined" />
+        </button>
+        <h2>Adicionar novo</h2>
+        <div>
+          <img src={retangle} alt="bandeira" />
+          <Form onSubmit={(e) => { changeCarEdit(e); }}>
+            <label htmlFor="name">
+              Nome
+              <input onChange={handleChangeEdit} id="name" type="text" name="name" value={carUpdated.name} />
+            </label>
+            <label htmlFor="model">
+              Modelo
+              <input onChange={handleChangeEdit} id="model" type="text" name="model" value={carUpdated.model} />
+            </label>
+            <label htmlFor="name">
+              Ano
+              <input onChange={handleChangeEdit} id="year" type="text" name="year" value={carUpdated.year} />
+            </label>
+            <label htmlFor="speed">
+              Velocidade Máxima Km/h
+              <input onChange={handleChangeEdit} id="speed" type="text" name="speed" value={carUpdated.speed} />
+            </label>
+            <label htmlFor="energyRating">
+              Nota economia
+              <input onChange={handleChangeEdit} id="energyRating" type="text" name="energyRating" value={carUpdated.energyRating} />
+            </label>
+            <label htmlFor="userRating">
+              Teste
+              <input onChange={handleChangeEdit} id="userRating" type="text" name="userRating" value={carUpdated.userRating} />
+            </label>
+            <label htmlFor="link">
+              Link produtos
+              <input
+                onChange={handleChangeEdit}
+                id="link"
+                type="text"
+                name="image"
+                value={carUpdated.image}
+              />
+            </label>
+            <FormButton
+              disabled={isDisableEdit}
+              type="submit"
+            >
+              <span className="iconify" data-icon="carbon:add" />
+              Adicionar Novo
+            </FormButton>
+          </Form>
+        </div>
+      </FormContainer>
+      ) }
       <article>
         <h1>Lista</h1>
         <ButtonAdd
@@ -123,34 +203,44 @@ function TableList() {
           Adicionar Novo
         </ButtonAdd>
       </article>
-      <table cellSpacing="0" className="oi">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Ano</th>
-            <th>Velocidade máx Km/h</th>
-            <th>Nota Economia</th>
-            <th>Nota usuários</th>
-            <th>{ }</th>
-            <th>{ }</th>
-          </tr>
-        </thead>
-        <tbody>
-          { renderTable.length > 0 && renderTable.map(({
-            name, year, speed, energyRating, userRating, id,
-          }) => (
-            <tr key={id}>
-              <td>{name}</td>
-              <td>{year}</td>
-              <td>{speed}</td>
-              <td>{energyRating}</td>
-              <td>{userRating}</td>
-              <td><button type="button" onClick={() => deleteCar(id)}><span className="iconify" data-icon="akar-icons:trash-can" /></button></td>
-              <td><span className="iconify" data-icon="clarity:edit-line" /></td>
+      <TableContainer>
+        <table cellSpacing="0">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Ano</th>
+              <th>Velocidade máx Km/h</th>
+              <th>Nota Economia</th>
+              <th>Nota usuários</th>
+              <th>{ }</th>
+              <th>{ }</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            { renderTable.length > 0 && renderTable.map(({
+              name, year, speed, energyRating, userRating, id,
+            }) => (
+              <tr key={id}>
+                <td>{name}</td>
+                <td>{year}</td>
+                <td>{speed}</td>
+                <td>{energyRating}</td>
+                <td>{userRating}</td>
+                <td>
+                  <button type="button" onClick={() => deleteCar(id)}>
+                    <span className="iconify" data-icon="akar-icons:trash-can" />
+                  </button>
+                </td>
+                <td>
+                  <button type="button" onClick={() => editCar(id)}>
+                    <span className="iconify" data-icon="clarity:edit-line" />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </TableContainer>
     </ListContainer>
   );
 }
