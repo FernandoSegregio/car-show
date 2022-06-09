@@ -51,10 +51,12 @@ function TableList() {
     e.preventDefault();
     setRenderTable([...renderTable, newCar]);
     setNewCar(initialState);
+    localStorage.setItem('dataBase', JSON.stringify([...renderTable, newCar]));
   }
 
   function deleteCar(id) {
     const dataUpdated = renderTable.filter((elem) => elem.id !== id);
+    localStorage.setItem('dataBase', JSON.stringify(dataUpdated));
     setRenderTable(dataUpdated);
   }
 
@@ -69,6 +71,7 @@ function TableList() {
   function changeCarEdit(e) {
     e.preventDefault();
     renderTable[index] = carUpdated;
+    localStorage.setItem('dataBase', JSON.stringify(renderTable));
     setRenderTable(renderTable);
     setCarUpdated(initialState);
   }
@@ -80,7 +83,8 @@ function TableList() {
   }, [location.pathname]);
 
   useEffect(() => {
-    console.log(renderTable);
+    const dataLocalStorage = localStorage.getItem('dataBase');
+    if (dataLocalStorage) { setRenderTable(JSON.parse(dataLocalStorage)); }
   }, []);
 
   return (
