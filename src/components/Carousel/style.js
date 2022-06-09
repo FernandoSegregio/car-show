@@ -13,18 +13,17 @@ export const CarouselContainer = styled(Swiper)`
   display: flex;
   height: 560px;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px 37px;
 
 
     @media screen and (min-width: 900px) {
       height: 600px;
-      padding: 90px 0 40px;
+      padding: 90px 120px 40px;
     }  
 
     .swiper-wrapper {
       align-items: flex-end;
-      width: 76%;
-      margin: 0 50px;
+      
 
       @media screen and (min-width: 900px) {
         align-items: center;
@@ -38,10 +37,9 @@ export const CarouselContainer = styled(Swiper)`
       flex-direction: column;
       height: 362px;
       position: relative;
-      width: 278px !important;
     }
 
-    .swiper-slide .car1 {
+    .car1 {
       left: 8%;
       position: absolute;
       top: -114px;
