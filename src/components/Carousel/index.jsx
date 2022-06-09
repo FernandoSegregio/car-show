@@ -19,7 +19,7 @@ function Carousel() {
   return (
     <CarouselSection>
       <CarouselContainer
-        spaceBetween={24}
+        spaceBetween={20}
         slidesPerView={1}
         pagination={{
           clickable: true,

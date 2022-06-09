@@ -13,7 +13,7 @@ export const CarouselContainer = styled(Swiper)`
   display: flex;
   height: 560px;
   justify-content: center;
-  padding: 40px 24px;
+  padding: 40px 0;
 
 
     @media screen and (min-width: 900px) {
