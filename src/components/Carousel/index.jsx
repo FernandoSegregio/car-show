@@ -27,7 +27,6 @@ function Carousel() {
         }}
         navigation
         modules={[Pagination, Navigation]}
-        className="mySwiper"
         breakpoints={{
           800: {
             slidesPerView: 3,
