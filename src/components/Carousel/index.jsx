@@ -26,7 +26,7 @@ function Carousel() {
           type: 'progressbar',
         }}
         navigation
-        modules={[Pagination, Navigation]}
+        modules={[Navigation, Pagination]}
         breakpoints={{
           800: {
             slidesPerView: 3,
