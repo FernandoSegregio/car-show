@@ -27,8 +27,9 @@ export const SectionMain = styled.section`
 
     @media screen and (min-width: 900px) {
       background-image: url(${back});
-      clip-path: ellipse(1500px 370px at 50% 47%);
-      height: 700px;
+      clip-path: ellipse(130vw 37vw at 50% 13vw);
+      background-position: 50% 0%;
+      height: calc(100vw / 2);
     }
 
     h1 {
