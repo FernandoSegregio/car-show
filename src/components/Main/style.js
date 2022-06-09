@@ -15,12 +15,13 @@ export const MainContainer = styled.main`
 export const SectionMain = styled.section`
   background-color: var(--neutral-color-white-200);
   background-image: url(${backgroundMobile});
-  background-position-x: 50%;
-  background-position-y: 50%;
+  background-position: 50% 0%;
   background-repeat: no-repeat;
   background-size: 100%;
-  clip-path: ellipse(427px 148px at 50% 43%);
-  height: 260px;
+  clip-path: ellipse(160vw 50vw at 50% 18vw);
+  display: flex;
+  height: 72vw;
+  justify-content: center;
   position: relative;
   width: 100%;
   z-index: 0;
@@ -35,9 +36,8 @@ export const SectionMain = styled.section`
     h1 {
       color: var(--neutral-color-white-300);
       font-family: bebas-kai;   
-      font-size: 59.9658px;
+      font-size: 4rem;
       font-weight: var(--font-weight-bold);
-      left: 20%;
       letter-spacing: 0.12em;
       line-height: var(--line-height-m);
       position: absolute;
@@ -46,9 +46,8 @@ export const SectionMain = styled.section`
 
         @media screen and (min-width: 900px) {
           font-weight: 400;
-          font-size: 203.959px;
+          font-size: 14rem;
           line-height: 150%;
-          left: 23%;
           letter-spacing: 0.12em;
           top: 70px;
         }
