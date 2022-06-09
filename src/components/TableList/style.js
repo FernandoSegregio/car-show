@@ -182,3 +182,10 @@ export const FormButton = styled(ButtonAdd)`
       border: 0.627523px solid var(--brand-color-secundary);
     }
 `;
+
+export const TableContainer = styled.div`
+  margin: 0px auto;
+  max-height: 500px;
+  overflow-y: scroll;
+  width: 1067px;
+`;
