@@ -4,7 +4,17 @@ export const HeaderContainer = styled.header`
   height: 50px;
   background-color: transparent;
   width: 100%;
-  position: absolute; 
+  position: absolute;
+
+      .disable {
+        color: #b0b0b2;
+
+        p {
+          margin-top: -6px;
+          font-size: 14px;
+          letter-spacing: 0.1px;
+        } 
+      }
 `;
 
 export const Hamburguer = styled.button`

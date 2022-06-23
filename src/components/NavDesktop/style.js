@@ -1,28 +1,31 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  align-items: center;
   height: 96px;
   width: 100%;
   display: flex;
   position: absolute;
+  justify-content: center;
   background-color: ${(props) => props.theme.background};
 
 
-  & > svg {
-      z-index: 2;
+  svg {
+      position: relative;
+      left: 5%;
+      top: 5px;
+      z-index: 3;
       width: 65px;
       height: 65px;
-      margin: 24.13px 0 0 32.12px;
       color: var(--neutral-color-white-100);
     }
 `;
 
 export const NavHeader = styled.nav`
-  width: calc(100% - 48px);
+  width: 100%;
   display: flex;
   z-index: 2;
-  margin: 30px 60px 0;
-
+  margin-right: 60.2px;  
     a {
       text-decoration: none;
     }
@@ -32,7 +35,7 @@ export const UlNav = styled.ul`
   height: 50px;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 `;
 
