@@ -9,6 +9,7 @@ Dados Mockados em formato de resposta da API um arquivo data.
 * React
 * Gerenciamento de Estado
 * Styled Components
+* Mobile First
 * Hooks
 * Hook customizada
 * CSS
