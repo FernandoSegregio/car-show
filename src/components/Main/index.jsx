@@ -45,7 +45,9 @@ function Main() {
               </>
             )
           }
-          <ButtonAbout type="button">Ver carros</ButtonAbout>
+          <a href="/#cars">
+            <ButtonAbout type="button">Ver carros</ButtonAbout>
+          </a>
         </ArticleAbout>
       </SectionAbout>
     </MainContainer>
