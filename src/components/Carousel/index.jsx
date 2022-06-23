@@ -17,7 +17,7 @@ import data from '../../helper/database';
 
 function Carousel() {
   return (
-    <CarouselSection>
+    <CarouselSection id="cars">
       <CarouselContainer
         spaceBetween={20}
         slidesPerView={1}
