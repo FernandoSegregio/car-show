@@ -27,11 +27,14 @@ function NavMobile() {
           <a href="#home" onClick={() => openMenu()}>
             <Li>Home</Li>
           </a>
-          <Li>Fale Conosco</Li>
+          {/* <Li>Fale Conosco</Li> */}
           <a href="#about" onClick={() => openMenu()}>
             <Li>Sobre</Li>
           </a>
-          <Li>Tabela</Li>
+          <Li className="disable">
+            Tabela
+            <p>* Indisponível na versão mobile</p>
+          </Li>
         </UlNav>
       </NavHeader>
     </HeaderContainer>

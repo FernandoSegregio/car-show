@@ -22,11 +22,11 @@ function NavDesktop() {
           <Link to="/table">
             <Li>Tabela</Li>
           </Link>
-          <Li>Fale Conosco</Li>
+          {/* <Li>Fale Conosco</Li>
           <Li>
             Entrar
             <span className="iconify" data-icon="ant-design:user-outlined" />
-          </Li>
+          </Li> */}
         </UlNav>
       </NavHeader>
     </HeaderContainer>
