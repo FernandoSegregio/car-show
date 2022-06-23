@@ -8,6 +8,7 @@ export const HeaderContainer = styled.header`
 
       .disable {
         color: #b0b0b2;
+        cursor: not-allowed;
 
         p {
           margin-top: -6px;
