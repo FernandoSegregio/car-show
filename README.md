@@ -2,6 +2,7 @@
 
 ## :memo: Descrição
 Desenvolvimento de uma aplicação responsiva, para telas mobile 360px e desktop 1366px.
+Dados Mockados em formato de resposta da API um arquivo data.
 
 ## :wrench: Tecnologias utilizadas
 * Vite
@@ -50,7 +51,7 @@ $ docker run -p 3000:3000 front
 A aplicação é roda no navegador, na porta 3000 com o seguinte endereço: http://localhost:3000
 
 ## :rocket:Aplicação Hospedada:
-https://car-show-fernandosegregio.vercel.app
+https://car-show-fernando-segregio.vercel.app/
 
 ## 👨🏻‍💻Desenvolvido por:
 
